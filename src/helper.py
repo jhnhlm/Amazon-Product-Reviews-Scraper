@@ -22,8 +22,8 @@ def get_review():
 #this code extract reviews stars
 def get_stars():
     """
-    intput:
-    output:
+    intput: none
+    output: star ratings
     """
     stars = driver.find_elements_by_class_name("review-rating")[2:]
     star_reviews = []
@@ -34,8 +34,8 @@ def get_stars():
 #clicking next
 def click_next():
     """
-    input:
-    outpu:
+    input: none
+    outpu: none
     """
     nx = driver.find_element_by_xpath('/html/body/div[1]/div[3]/div/div[1]/div/div[1]/div[5]/div[3]/div/div/span/div/ul/li[2]/a')
     nx.click()
@@ -46,8 +46,8 @@ def click_next():
 #round up to get the number of pages we have to scrape
 def num_pages():
     """
-    input:
-    output:
+    input: string
+    output: int
     """
     number_reviews_string = driver.find_element_by_xpath('//*[@id="filter-info-section"]/div/span').text
     num = number_reviews_string.split('|')[1].replace(',','')
